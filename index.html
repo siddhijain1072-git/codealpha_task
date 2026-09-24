@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Phishing Awareness Training</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            background: #0f172a;
+            text-align: center;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
+        }
+
+        section {
+            background: white;
+            width: 85%;
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px #ccc;
+        }
+
+        h2 {
+            color: #172554;
+            margin-bottom: 20px;
+        }
+
+        .info-box {
+            background: #eff6ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            flex: 1;
+            min-width: 200px;
+            background: #e0e7ff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .email-box {
+            background: #fef2f2;
+            border-left: 6px solid #dc2626;
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            margin: 10px 5px;
+            border-radius: 7px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        #email-warning {
+            color: #dc2626;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .safety-box {
+            background: #ecfdf5;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .quiz-container {
+            text-align: center;
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        #question-number {
+            color: #2563eb;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        #question {
+            margin-bottom: 20px;
+        }
+
+        #answers button {
+            display: block;
+            width: 80%;
+            margin: 10px auto;
+            background: #334155;
+        }
+
+        #answers button:hover {
+            background: #1e293b;
+        }
+
+        #nextBtn {
+            display: none;
+        }
+
+        #restartBtn {
+            display: none;
+            background: #16a34a;
+        }
+
+        #score {
+            font-size: 25px;
+            font-weight: bold;
+            margin: 20px;
+        }
+
+        footer {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        @media(max-width:600px) {
+            header h1 {
+                font-size: 27px;
+            }
+
+            nav a {
+                display: block;
+                margin: 8px;
+            }
+
+            section {
+                width: 92%;
+                padding: 20px;
+            }
+
+            #answers button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🛡️ Phishing Awareness Training</h1>
+        <p>Learn • Identify • Protect</p>
+    </header>
+
+    <nav>
+        <a href="#about">Phishing</a>
+        <a href="#signs">Warning Signs</a>
+        <a href="#social">Social Engineering</a>
+        <a href="#safety">Safety Tips</a>
+        <a href="#quiz">Quiz</a>
+    </nav>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <h2>What is Phishing?</h2>
+
+        <p>
+            Phishing is a cyber attack where attackers pretend to be
+            trusted people or organizations to trick users into sharing
+            sensitive information.
+        </p>
+
+        <div class="info-box">
+            <h3>Attackers may try to steal:</h3>
+
+            <ul>
+                <li>🔐 Passwords</li>
+                <li>🔢 OTPs</li>
+                <li>💳 Banking information</li>
+                <li>👤 Personal information</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- WARNING SIGNS -->
+    <section id="signs">
+        <h2>🚨 How to Recognize Phishing</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>📧 Suspicious Sender</h3>
+                <p>Check the sender's email address carefully.</p>
+            </div>
+
+            <div class="card">
+                <h3>⚠️ Urgent Message</h3>
+                <p>Be careful with messages saying "Act Now!"</p>
+            </div>
+
+            <div class="card">
+                <h3>🔗 Suspicious Link</h3>
+                <p>Check the website URL before clicking.</p>
+            </div>
+
+            <div class="card">
+                <h3>🔢 OTP Request</h3>
+                <p>Never share your OTP or password.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- EMAIL -->
+    <section>
+        <h2>📧 Example of a Phishing Email</h2>
+
+        <div class="email-box">
+
+            <p><b>From:</b> security@bank-example.com</p>
+
+            <p>
+                <b>Subject:</b>
+                URGENT! Account Verification Required
+            </p>
+
+            <hr>
+
+            <p>
+                Your account will be blocked today.
+                Click the link below immediately to verify your account.
+            </p>
+
+            <button onclick="checkEmail()">
+                Check This Email
+            </button>
+
+            <p id="email-warning"></p>
+
+        </div>
+    </section>
+
+    <!-- SOCIAL ENGINEERING -->
+    <section id="social">
+
+        <h2>🎭 Social Engineering</h2>
+
+        <p>
+            Social engineering is a technique where attackers manipulate
+            people into performing actions that benefit the attacker.
+        </p>
+
+        <br>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>😨 Fear</h3>
+                <p>"Your account will be blocked."</p>
+            </div>
+
+            <div class="card">
+                <h3>⏰ Urgency</h3>
+                <p>"Respond immediately."</p>
+            </div>
+
+            <div class="card">
+                <h3>🎁 Reward</h3>
+                <p>"You have won a prize!"</p>
+            </div>
+
+            <div class="card">
+                <h3>👤 Impersonation</h3>
+                <p>Pretending to be a trusted person.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SAFETY -->
+    <section id="safety">
+
+        <h2>🛡️ How to Stay Safe?</h2>
+
+        <div class="safety-box">
+
+            <p>✅ Think before clicking.</p>
+            <p>✅ Check the sender.</p>
+            <p>✅ Verify website URLs.</p>
+            <p>✅ Never share OTP or passwords.</p>
+            <p>✅ Use multi-factor authentication.</p>
+            <p>✅ Report suspicious messages.</p>
+
+        </div>
+
+    </section>
+
+    <!-- QUIZ -->
+    <section id="quiz">
+
+        <h2>🧠 Interactive Phishing Quiz</h2>
+
+        <div class="quiz-container">
+
+            <div id="question-number"></div>
+
+            <h3 id="question"></h3>
+
+            <div id="answers"></div>
+
+            <button id="nextBtn" onclick="nextQuestion()">
+                Next Question
+            </button>
+
+            <div id="score"></div>
+
+            <button id="restartBtn" onclick="restartQuiz()">
+                Restart Quiz
+            </button>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <h3>Phishing Awareness Training</h3>
+        <p>Stay Alert • Stay Safe • Think Before You Click</p>
+        <p>Cyber Security Awareness Project</p>
+    </footer>
+
+
+    <script>
+
+        // EMAIL CHECK
+        function checkEmail() {
+
+            document.getElementById("email-warning").innerHTML =
+                "⚠️ Suspicious! This email creates urgency and asks you to take immediate action. Do not click unknown links.";
+
+        }
+
+
+        // QUIZ
+        const questions = [
+
+            {
+                question: "What is phishing?",
+                answers: [
+                    "A type of cyber attack",
+                    "A computer game",
+                    "A programming language",
+                    "An antivirus"
+                ],
+                correct: 0
+            },
+
+            {
+                question: "What is Smishing?",
+                answers: [
+                    "Phishing through email",
+                    "Phishing through SMS",
+                    "Phishing through games",
+                    "Phishing through calls"
+                ],
+                correct: 1
+            },
+
+            {
+                question: "Which information should you never share?",
+                answers: [
+                    "Your favorite color",
+                    "Your OTP and password",
+                    "Your hobby",
+                    "Your favorite food"
+                ],
+                correct: 1
+            },
+
+            {
+                question: "Which is a common phishing warning sign?",
+                answers: [
+                    "Urgent request for sensitive information",
+                    "A normal greeting",
+                    "A school timetable",
+                    "A weather report"
+                ],
+                correct: 0
+            },
+
+            {
+                question: "What should you do before clicking a suspicious link?",
+                answers: [
+                    "Click immediately",
+                    "Forward it to everyone",
+                    "Verify the sender and URL",
+                    "Share your OTP"
+                ],
+                correct: 2
+            }
+
+        ];
+
+
+        let currentQuestion = 0;
+        let score = 0;
+        let answered = false;
+
+
+        function showQuestion() {
+
+            answered = false;
+
+            let q = questions[currentQuestion];
+
+            document.getElementById("question-number").innerHTML =
+                "Question " + (currentQuestion + 1) +
+                " of " + questions.length;
+
+            document.getElementById("question").innerHTML =
+                q.question;
+
+            let answersHTML = "";
+
+            q.answers.forEach(function(answer, index) {
+
+                answersHTML +=
+                    '<button onclick="checkAnswer(' + index + ')">' +
+                    answer +
+                    '</button>';
+
+            });
+
+            document.getElementById("answers").innerHTML =
+                answersHTML;
+
+            document.getElementById("nextBtn").style.display = "none";
+        }
+
+
+        function checkAnswer(selected) {
+
+            if (answered) {
+                return;
+            }
+
+            answered = true;
+
+            let correctAnswer =
+                questions[currentQuestion].correct;
+
+            if (selected === correctAnswer) {
+
+                score++;
+
+                alert("✅ Correct Answer!");
+
+            } else {
+
+                alert("❌ Wrong Answer!");
+
+            }
+
+            document.getElementById("nextBtn").style.display =
+                "inline-block";
+        }
+
+
+        function nextQuestion() {
+
+            currentQuestion++;
+
+            if (currentQuestion < questions.length) {
+
+                showQuestion();
+
+            } else {
+
+                showResult();
+
+            }
+        }
+
+
+        function showResult() {
+
+            document.getElementById("question-number").innerHTML =
+                "🎉 Quiz Completed!";
+
+            document.getElementById("question").innerHTML =
+                "Your final score is:";
+
+            document.getElementById("answers").innerHTML = "";
+
+            document.getElementById("nextBtn").style.display =
+                "none";
+
+            document.getElementById("score").innerHTML =
+                score + " / " + questions.length;
+
+            document.getElementById("restartBtn").style.display =
+                "inline-block";
+        }
+
+
+        function restartQuiz() {
+
+            currentQuestion = 0;
+            score = 0;
+
+            document.getElementById("score").innerHTML = "";
+
+            document.getElementById("restartBtn").style.display =
+                "none";
+
+            showQuestion();
+        }
+
+
+        // START QUIZ
+        showQuestion();
+
+    </script>
+
+</body>
+</html>
