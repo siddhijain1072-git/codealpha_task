@@ -1,0 +1,12 @@
+Time,Source IP,Destination IP,Protocol,Source Port,Destination Port,Alert
+20:19:40,Multiple Sources,Local Network,ALL,-,-,HIGH,Abnormally High Packet Rate
+20:19:45,Multiple Sources,Local Network,ALL,-,-,HIGH,Abnormally High Packet Rate
+20:19:51,Multiple Sources,Local Network,ALL,-,-,HIGH,Abnormally High Packet Rate
+20:19:56,Multiple Sources,Local Network,ALL,-,-,HIGH,Abnormally High Packet Rate
+20:20:27,Multiple Sources,Local Network,ALL,-,-,HIGH,Abnormally High Packet Rate
+20:20:32,Multiple Sources,Local Network,ALL,-,-,HIGH,Abnormally High Packet Rate
+20:20:37,Multiple Sources,Local Network,ALL,-,-,HIGH,Abnormally High Packet Rate
+20:21:15,Multiple Sources,Local Network,ALL,-,-,HIGH,Abnormally High Packet Rate
+22:49:05,Multiple Sources,Local Network,ALL,-,-,HIGH,Abnormally High Packet Rate
+22:49:10,Multiple Sources,Local Network,ALL,-,-,HIGH,Abnormally High Packet Rate
+22:57:38,14.139.5.5,Multiple,TCP/UDP,-,-,HIGH,Possible Port Scan Detected
